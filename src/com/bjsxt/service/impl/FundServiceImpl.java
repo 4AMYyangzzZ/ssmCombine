@@ -5,9 +5,14 @@ import com.bjsxt.mapper.FundMapper;
 import com.bjsxt.pojo.Account;
 import com.bjsxt.pojo.Fund;
 import com.bjsxt.service.FundService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service("fundService")
 public class FundServiceImpl implements FundService {
+    @Autowired
     private AccountMapper accountMapper;
+    @Autowired
     private FundMapper fundMapper;
 
     public AccountMapper getAccountMapper() {

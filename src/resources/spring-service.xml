@@ -12,9 +12,6 @@
         http://www.springframework.org/schema/context/spring-context.xsd
          http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
-    <!--将业务层交给spring进行管理-->
-    <bean id="fundService" class="com.bjsxt.service.impl.FundServiceImpl">
-        <property name="accountMapper" ref="accountMapper"></property>
-        <property name="fundMapper" ref="fundMapper"></property>
-    </bean>
+    <!--配置spring组件扫描-->
+   <context:component-scan base-package="com.bjsxt.service"/>
 </beans>
