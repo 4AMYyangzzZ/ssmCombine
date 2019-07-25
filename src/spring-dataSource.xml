@@ -25,19 +25,6 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
-    <!--注册sqlsessionfactorybean-->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="classpath:mybatis.xml"/>
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-    <!--获得mybatis的动态代理对象-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-    <property name="basePackage" value="com.bjsxt.mapper"></property>
-    </bean>
-    <!--将业务层交给spring进行管理-->
-    <bean id="fundService" class="com.bjsxt.service.impl.FundServiceImpl">
-        <property name="accountMapper" ref="accountMapper"></property>
-        <property name="fundMapper" ref="fundMapper"></property>
-    </bean>
+
+
 </beans>
